@@ -20,9 +20,9 @@ function AgentContainer(){
 
     function deleteFunc(id){
         console.log(id)
-        fetch('http://13.235.114.159:9000/home/agents/'+id+'/delete', {method: 'post', headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
-        // axios.post('http://13.235.114.159:9000/home/agents/'+id+'/delete')
-        .then(response => response.json())
+        // fetch('http://13.235.114.159:9000/home/agents/'+id+'/delete', {method: 'post', headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
+        // .then(response => response.json())
+        axios.post('http://13.235.114.159:9000/home/agents/'+id+'/delete')
         .then(response => {
             alert(response.data.message);
             setAgents(prev => {
