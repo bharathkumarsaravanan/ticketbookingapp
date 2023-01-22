@@ -24,7 +24,7 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
+                axios.post('https://node-server-jtym.vercel.app/home/superagent/signup',auth)
                 .then(response =>{
                     alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})
@@ -40,7 +40,6 @@ function SignUp(){
 
     return(
         <div className="authentication">
-            <Typography variant="h3" color="text.secondary">Super Agent</Typography>
             <Typography variant="h3" color="text.secondary">Super Agent</Typography>
             <TextField 
                 name="mail"
