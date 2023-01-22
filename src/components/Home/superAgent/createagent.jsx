@@ -32,7 +32,7 @@ function CreateAgent(props){
     function handleClick(){
         console.log('auth')
         if(auth.mail !=='' && auth.password !==''){
-            axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/signup',auth)
+            axios.post('https://node-server-jtym.vercel.app/home/agent/signup',auth)
             .then(response =>{
                 if(response.data.message !== 'account created successfully'){
                     props.setVisible(false);

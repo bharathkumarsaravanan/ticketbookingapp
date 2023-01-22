@@ -24,7 +24,7 @@ function PassengerTable(){
     },[passengers])
 
     useEffect(() => {
-        axios.get('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/superagent/rowcount')
+        axios.get('https://node-server-jtym.vercel.app/home/superagent/rowcount')
         .then(response =>{
             setLimit(response.data.limitSeat)
             setRowCount(response.data.count)
@@ -32,7 +32,7 @@ function PassengerTable(){
     },[localStorage.getItem('seat')])
 
     useEffect(() => {
-        axios.get('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/passengers')
+        axios.get('https://node-server-jtym.vercel.app/home/agent/'+user+'/passengers')
         .then(response => setPassengers(response.data.passengers))
     },[])
 

@@ -10,7 +10,7 @@ function AgentContainer(){
     const [createPop, setCreatePop] = useState(false);
 
     useEffect(() => {
-        axios.get('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agents')
+        axios.get('https://node-server-jtym.vercel.app/home/agents')
         .then(response => setAgents(response.data.agents))
     },[])
 
@@ -20,7 +20,7 @@ function AgentContainer(){
 
     function deleteFunc(id){
         console.log(id)
-        axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agents/'+id+'/delete')
+        axios.post('https://node-server-jtym.vercel.app/home/agents/'+id+'/delete')
         .then(response => {
             alert(response.data.message);
             setAgents(prev => {

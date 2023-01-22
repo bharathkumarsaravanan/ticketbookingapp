@@ -10,7 +10,7 @@ function Header(){
     var {user} = useParams();
 
     useEffect(() => {
-        axios.get('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/user/'+user)
+        axios.get('https://node-server-jtym.vercel.app/home/user/'+user)
         .then(response => {
             console.log(response.data.agent[0])
             var agent = response.data.agent[0]
@@ -26,7 +26,7 @@ function Header(){
             <Typography variant="h4">JourneyBegins</Typography>
             <div>
                 {profileView&&<img 
-                    src={"https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/profile/"+userData.profile} 
+                    src={"https://node-server-jtym.vercel.app/profile/"+userData.profile} 
                     style={{borderRadius:'50%'}}
                     alt="profile" 
                     width="40" 

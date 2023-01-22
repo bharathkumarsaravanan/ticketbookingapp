@@ -46,7 +46,7 @@ function Seats(props){
             setupd(JSON.parse(localStorage.getItem('seat')));
         },1000)
 
-        axios.get('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/passengers')
+        axios.get('https://node-server-jtym.vercel.app/home/agent/'+user+'/passengers')
         .then(response => {
             setPassengers(response.data.passengers);
             setMales(response.data.passengers.filter(data => data.gender !== 'female'&&data.age < 60))
@@ -72,33 +72,33 @@ function Seats(props){
         oldGuys.map((peps, index)=> {
             if(index < rCount){
                 let tempValue = index * 6;
-                axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
+                axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
                 .then(response => setPassengers(response.data.return))
                 setSelected(prev => [...prev, tempValue])
             }
             else {
                 if(index < rCount + rCount){
                     let tempValue = ((index - rCount) * 6) + 5;
-                    axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
+                    axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
                     .then(response => setPassengers(response.data.return))
                     setSelected(prev => [...prev, tempValue])
                 }
                 else{
                     if(index < rCount + rCount + rCount){
                         let tempValue = ((index - (rCount+rCount)) * 6 ) + 1
-                        axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
+                        axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
                         .then(response => setPassengers(response.data.return))
                         setSelected(prev => [...prev, tempValue])
                     }
                     else{
                         if(index < (rCount + rCount + rCount + rCount)){
                             let tempValue = ((index - (rCount+rCount+rCount)) * 6) + 4
-                            axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
+                            axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:tempValue})
                             .then(response => setPassengers(response.data.return))
                             setSelected(prev => [...prev, tempValue])
                         }
                         else{
-                            axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:'waiting'})
+                            axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+peps.id,{seat:'waiting'})
                             .then(response => setPassengers(response.data.return))
                         }
                     }
@@ -110,17 +110,17 @@ function Seats(props){
         females.map((female, index) => {
             if(index < rCount){
                 let tempValue = (index * 6) +2;
-                axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:tempValue})
+                axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:tempValue})
                 .then(response => setPassengers(response.data.return))
                 setSelected(prev => [...prev, tempValue])
             }
             else{
                 if(index < rCount+rCount){
-                    axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:"waiting.."})
+                    axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:"waiting.."})
                     .then(response => setPassengers(response.data.return))
                 }else{
                     let tempValue = (index * 6) + 3;
-                    axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:tempValue})
+                    axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+female.id,{seat:tempValue})
                     .then(response => setPassengers(response.data.return))
                     setSelected(prev => [...prev, tempValue])
                 }
@@ -133,11 +133,11 @@ function Seats(props){
         males.map((male, index) => {
             if(index < rCount){
                 let tempValue = (index * 6) + 3;
-                axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+male.id,{seat:tempValue})
+                axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+male.id,{seat:tempValue})
                 .then(response => setPassengers(response.data.return))
                 setSelected(prev => [...prev, tempValue])
             }else{
-                axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/'+user+'/booking/'+male.id,{seat:'waiting...'})
+                axios.post('https://node-server-jtym.vercel.app/home/agent/'+user+'/booking/'+male.id,{seat:'waiting...'})
                 .then(response => setPassengers(response.data.return)) 
             }
         })

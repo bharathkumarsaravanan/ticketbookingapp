@@ -30,9 +30,9 @@ function AgentForm(){
         formData.append('profile',profile)
 
         if(auth.dob !== ''&& auth.address !== ''&& auth.phone !== ''){
-            axios.post('https://node-server-jtym-9ijakmwyd-bharathkumarsaravanan.vercel.app/agent/'+user+'/form', auth)
+            axios.post('https://node-server-jtym.vercel.app/agent/'+user+'/form', auth)
             .then(response => {
-                var url = 'https://node-server-jtym-9ijakmwyd-bharathkumarsaravanan.vercel.app/agent/'+user+'/form/profile';
+                var url = 'https://node-server-jtym.vercel.app/agent/'+user+'/form/profile';
                 axios({url: url, method: 'POST', 
                     data: formData, 
                     headers: {'Content-Type': 'multipart/form-data'}})
