@@ -24,7 +24,7 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                axios.post('https://node-server-jtym-el0nmddmn-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
+                axios.post('https://node-server-jtym.vercel.app/home/superagent/signup',auth)
                 .then(response =>{
                     alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})
