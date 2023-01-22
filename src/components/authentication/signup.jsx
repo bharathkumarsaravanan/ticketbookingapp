@@ -24,25 +24,12 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                fetch('https://node-server-jtym-7wfe2wpiw-bharathkumarsaravanan.vercel.app/home/superagent/signup',{
-                    method: 'POST',
-                    body: JSON.stringify(auth),
-                    headers:{
-                        'Content-Type': 'application/json'
-                    },
-                    mode: "no-cors"
-                }).then(response => response.json())
-                .then(data => {
-                    alert(data.data.message)
+                axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
+                .then(response =>{
+                    alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})
                     window.location.href = '/'
                 })
-                // axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
-                // .then(response =>{
-                //     alert(response.data.message)
-                //     setAuth({mail:'', password:'',confirm:''})
-                //     window.location.href = '/'
-                // })
             }else{
                 alert('check the confirm password')
             }
@@ -53,6 +40,7 @@ function SignUp(){
 
     return(
         <div className="authentication">
+            <Typography variant="h3" color="text.secondary">Super Agent</Typography>
             <Typography variant="h3" color="text.secondary">Super Agent</Typography>
             <TextField 
                 name="mail"
