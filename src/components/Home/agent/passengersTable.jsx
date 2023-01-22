@@ -24,7 +24,7 @@ function PassengerTable(){
     },[passengers])
 
     useEffect(() => {
-        axios.get('https://node-server-jtym.vercel.app/home/superagent/rowcount')
+        axios.get('https://node-server-lilac.vercel.app/home/superagent/rowcount')
         .then(response =>{
             setLimit(response.data.limitSeat)
             setRowCount(response.data.count)
@@ -32,7 +32,7 @@ function PassengerTable(){
     },[localStorage.getItem('seat')])
 
     useEffect(() => {
-        axios.get('https://node-server-jtym.vercel.app/home/agent/'+user+'/passengers')
+        axios.get('https://node-server-lilac.vercel.app/home/agent/'+user+'/passengers')
         .then(response => setPassengers(response.data.passengers))
     },[])
 
@@ -42,7 +42,10 @@ function PassengerTable(){
 
     function deletePas(delId){
         setPassengers(prev => prev.filter(pas => pas.id !== delId));
-        axios.post('https://node-server-jtym-g9yzsxx4g-bharathkumarsaravanan.vercel.app/home/agent/passengers/delete',[delId])
+        axios.post({url:'https://node-server-lilac.vercel.app/home/agent/passengers/delete',
+                    method:'post',
+                    data: JSON.stringify([delId]),
+                    headers:{'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS', }})
         .then(response => console.log(response.data.message));
     }
 

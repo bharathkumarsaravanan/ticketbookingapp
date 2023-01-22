@@ -24,14 +24,14 @@ function Index(){
     }
 
     function rowEnter(){
-        axios.post('https://node-server-jtym.vercel.app/home/superagent/rowcount',row)
+        axios.post('https://node-server-lilac.vercel.app/home/superagent/rowcount',row)
         .then(response => console.log(response.data))
 
         localStorage.setItem('seat',!JSON.parse(localStorage.getItem('seat')))
     }
 
     function limitEnter(){
-        axios.post('https://node-server-jtym.vercel.app/home/superagent/rowcount',limit)
+        axios.post('https://node-server-lilac.vercel.app/home/superagent/rowcount',limit)
         .then(response => console.log(response.data))
         localStorage.setItem('seat',!JSON.parse(localStorage.getItem('seat')))  
     }

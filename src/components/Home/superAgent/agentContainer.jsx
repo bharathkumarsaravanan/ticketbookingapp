@@ -10,7 +10,7 @@ function AgentContainer(){
     const [createPop, setCreatePop] = useState(false);
 
     useEffect(() => {
-        axios.get('https://node-server-jtym.vercel.app/home/agents')
+        axios.get('https://node-server-lilac.vercel.app/home/agents')
         .then(response => setAgents(response.data.agents))
     },[])
 
@@ -20,7 +20,9 @@ function AgentContainer(){
 
     function deleteFunc(id){
         console.log(id)
-        axios.post('https://node-server-jtym.vercel.app/home/agents/'+id+'/delete')
+        fetch('https://node-server-lilac.vercel.app/home/agents/'+id+'/delete', {method: 'post', headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
+        // axios.post('https://node-server-lilac.vercel.app/home/agents/'+id+'/delete')
+        .then(response => response.json())
         .then(response => {
             alert(response.data.message);
             setAgents(prev => {
