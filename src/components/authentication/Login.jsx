@@ -22,7 +22,7 @@ function Login(){
     function handleClick(){
         console.log(auth);
         
-        axios.post('https://node-server-lilac.vercel.app/home',auth)
+        axios.post('http://13.235.114.159:9000/home',auth)
         .then(response => {
             console.log(response.data)
             if(response.data.login){

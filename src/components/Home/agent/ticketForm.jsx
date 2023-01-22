@@ -23,7 +23,7 @@ function TickerForm(props){
     function handleClick(){
         console.log(passenger)
         if(passenger.name !== ''&& passenger.age !== ''){
-            axios.post('https://node-server-lilac.vercel.app/home/agent/'+user+'/passengers', passenger)
+            axios.post('http://13.235.114.159:9000/home/agent/'+user+'/passengers', passenger)
             .then(response => props.newData(response.data.newData[0]));
             setPassenger({name: '', age:'',gender:passenger.gender});
         }else{
