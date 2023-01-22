@@ -24,7 +24,7 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                axios.post('http://13.235.114.159:9000/home/superagent/signup',auth)
+                axios.post('http://3.109.107.153:9000/home/superagent/signup',auth)
                 .then(response =>{
                     alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})

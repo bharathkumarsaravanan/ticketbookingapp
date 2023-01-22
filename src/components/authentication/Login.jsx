@@ -22,7 +22,7 @@ function Login(){
     function handleClick(){
         console.log(auth);
         
-        axios.post('http://13.235.114.159:9000/home',auth)
+        axios.post('http://3.109.107.153:9000/home',auth)
         .then(response => {
             console.log(response.data)
             if(response.data.login){

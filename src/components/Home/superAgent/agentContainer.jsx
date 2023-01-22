@@ -10,7 +10,7 @@ function AgentContainer(){
     const [createPop, setCreatePop] = useState(false);
 
     useEffect(() => {
-        axios.get('http://13.235.114.159:9000/home/agents')
+        axios.get('http://3.109.107.153:9000/home/agents')
         .then(response => setAgents(response.data.agents))
     },[])
 
@@ -20,9 +20,9 @@ function AgentContainer(){
 
     function deleteFunc(id){
         console.log(id)
-        // fetch('http://13.235.114.159:9000/home/agents/'+id+'/delete', {method: 'post', headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
+        // fetch('http://3.109.107.153:9000/home/agents/'+id+'/delete', {method: 'post', headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
         // .then(response => response.json())
-        axios.post('http://13.235.114.159:9000/home/agents/'+id+'/delete')
+        axios.post('http://3.109.107.153:9000/home/agents/'+id+'/delete')
         .then(response => {
             alert(response.data.message);
             setAgents(prev => {

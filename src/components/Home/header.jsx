@@ -10,7 +10,7 @@ function Header(){
     var {user} = useParams();
 
     useEffect(() => {
-        axios.get('http://13.235.114.159:9000/home/user/'+user)
+        axios.get('http://3.109.107.153:9000/home/user/'+user)
         .then(response => {
             console.log(response.data.agent[0])
             var agent = response.data.agent[0]
@@ -26,7 +26,7 @@ function Header(){
             <Typography variant="h4">JourneyBegins</Typography>
             <div>
                 {profileView&&<img 
-                    src={"http://13.235.114.159:9000/profile/"+userData.profile} 
+                    src={"http://3.109.107.153:9000/profile/"+userData.profile} 
                     style={{borderRadius:'50%'}}
                     alt="profile" 
                     width="40" 

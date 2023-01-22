@@ -30,9 +30,9 @@ function AgentForm(){
         formData.append('profile',profile)
 
         if(auth.dob !== ''&& auth.address !== ''&& auth.phone !== ''){
-            axios.post('http://13.235.114.159:9000/agent/'+user+'/form', auth)
+            axios.post('http://3.109.107.153:9000/agent/'+user+'/form', auth)
             .then(response => {
-                var url = 'http://13.235.114.159:9000/agent/'+user+'/form/profile';
+                var url = 'http://3.109.107.153:9000/agent/'+user+'/form/profile';
                 axios({url: url, method: 'POST', 
                     data: formData, 
                     headers: {'Content-Type': 'multipart/form-data'}})

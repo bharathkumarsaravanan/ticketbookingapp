@@ -32,8 +32,8 @@ function CreateAgent(props){
     function handleClick(){
         console.log('auth')
         if(auth.mail !=='' && auth.password !==''){
-            // fetch('http://13.235.114.159:9000/home/agent/signup',{method: 'post', data: auth, headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
-            axios.get('http://13.235.114.159:9000/home/agent/signup', auth)
+            // fetch('http://3.109.107.153:9000/home/agent/signup',{method: 'post', data: auth, headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
+            axios.get('http://3.109.107.153:9000/home/agent/signup', auth)
             .then(response =>{
                 if(response.data.message !== 'account created successfully'){
                     props.setVisible(false);
