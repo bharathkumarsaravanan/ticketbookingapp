@@ -23,12 +23,13 @@ function SignUp(){
         console.log(auth);
         
         if(auth.mail !== ''&& auth.password !== ''){
+                // axios.post('https://node-server-jtym.vercel.app/home/superagent/signup',auth)
+
             if(auth.password==auth.confirm){
                 axios({url: 'https://node-server-jtym.vercel.app/home/superagent/signup',
                 method: 'POST', 
                 data: formData, 
                 headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}})
-                // axios.post('https://node-server-jtym.vercel.app/home/superagent/signup',auth)
                 .then(response =>{
                     alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})
