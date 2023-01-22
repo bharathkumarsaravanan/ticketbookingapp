@@ -28,7 +28,7 @@ function SignUp(){
             if(auth.password==auth.confirm){
                 axios({url: 'https://node-server-jtym.vercel.app/home/superagent/signup',
                 method: 'POST', 
-                data: formData, 
+                data: JSON.stringify(auth), 
                 headers: {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'}})
                 .then(response =>{
                     alert(response.data.message)
