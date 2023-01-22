@@ -1,13 +1,127 @@
-body {
+body{
+  background-color: #3C4048;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+.portal{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  background-color: rgba(0,0,0, .3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portal .popUp{
+  background-color: aliceblue;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  width: fit-content;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.authentication{
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw;
+  gap: 2rem;
+  border-radius: 2rem;
+}
+.authentication input{
+  width: 20vw;
+}
+
+.superAgentIndex header{
+  background-color: #30475E;
+  height: 10vh;
+  width: 100vw;
+  top: 0;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+}
+.superAgentIndex header div{
+  position: absolute;
+  right: 7vw;
+  display: flex;
+  gap: 1rem;
+}
+.superAgentIndex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.agentsList{
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+}
+.agentsList table tr td,th{
+  padding: .5rem;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.seatsContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.seatsContainer table tr td{
+  padding: .5rem 1.5rem;
+  text-align: center;
+  border: 2px solid rgb(211, 183, 147);
+  background-color: aliceblue;
+  font-size: 30px;
+}
+
+.passengerForm{
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;  
+}
+
+.passengerTable{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  gap: 2rem;
+  align-items: center;
+}
+.passengerTable h6{
+  color: aliceblue;
+}
+.passengerTable table tr td{
+  border: 1px solid aliceblue;
+  padding: .5rem 1rem;
+  color: antiquewhite;
 }
