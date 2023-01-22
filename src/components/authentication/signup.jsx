@@ -24,12 +24,13 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                fetch('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',{
+                fetch('https://node-server-jtym-7wfe2wpiw-bharathkumarsaravanan.vercel.app/home/superagent/signup',{
                     method: 'POST',
                     body: JSON.stringify(auth),
                     headers:{
                         'Content-Type': 'application/json'
-                    }
+                    },
+                    mode: "no-cors"
                 }).then(response => response.json())
                 .then(data => {
                     alert(data.data.message)
