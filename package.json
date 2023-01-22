@@ -1,8 +1,6 @@
 {
   "name": "ticketapp",
   "version": "0.1.0",
-  "proxy": "https://node-server-jtym.vercel.app",
-  "homepage": "https://ticketbookingapp.vercel.app",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.10.0",

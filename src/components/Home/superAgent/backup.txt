@@ -69,3 +69,8 @@ males.map((male, index) => {
     }
 })
 }
+
+
+  "proxy": "https://node-server-jtym.vercel.app",
+  "homepage": "https://ticketbookingapp.vercel.app",
+  "private": true,
