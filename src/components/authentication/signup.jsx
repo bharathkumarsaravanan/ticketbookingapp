@@ -24,12 +24,24 @@ function SignUp(){
         
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
-                .then(response =>{
-                    alert(response.data.message)
+                fetch('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',{
+                    method: 'POST',
+                    body: JSON.stringify(auth),
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                }).then(response => response.json())
+                .then(data => {
+                    alert(data.data.message)
                     setAuth({mail:'', password:'',confirm:''})
                     window.location.href = '/'
                 })
+                // axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
+                // .then(response =>{
+                //     alert(response.data.message)
+                //     setAuth({mail:'', password:'',confirm:''})
+                //     window.location.href = '/'
+                // })
             }else{
                 alert('check the confirm password')
             }
