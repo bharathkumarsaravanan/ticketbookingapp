@@ -21,18 +21,10 @@ function SignUp(){
 
     function handleClick(){
         console.log(auth);
-        const config = {
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-            }
-          };
-        var url = 'https://node-server-jtym-fs3clxpiw-bharathkumarsaravanan.vercel.app/home/superagent/signup';
+        
         if(auth.mail !== ''&& auth.password !== ''){
             if(auth.password==auth.confirm){
-                axios({url: url, method: 'POST', 
-                data: auth, 
-                headers: config})
+                axios.post('https://node-server-jtym-imfn4zyjw-bharathkumarsaravanan.vercel.app/home/superagent/signup',auth)
                 .then(response =>{
                     alert(response.data.message)
                     setAuth({mail:'', password:'',confirm:''})
