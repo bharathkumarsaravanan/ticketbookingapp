@@ -32,11 +32,10 @@ function CreateAgent(props){
     function handleClick(){
         console.log('auth')
         if(auth.mail !=='' && auth.password !==''){
-            // fetch('http://3.109.107.153:9000/home/agent/signup',{method: 'post', data: auth, headers: {'Content-Type': 'application/json'}, mode: 'no-cors'})
-            axios.get('http://3.109.107.153:9000/home/agent/signup', auth)
+            axios.post('http://3.109.107.153:9000/home/agent/signup', auth)
             .then(response =>{
+                console.log(response.data.message)
                 if(response.data.message !== 'account created successfully'){
-                    props.setVisible(false);
                     emailjs.send("service_32t45dp","template_5d59kuf",{                 //emailjs for sending the confimation mail
                         to_email: auth.mail,
                         mail: auth.mail,
@@ -44,13 +43,18 @@ function CreateAgent(props){
                         link: link
                         },'2ivqwepktUEzNazVV').then((response)=>{
                             alert(response.data.message)
+                            props.setVisible(false);
                             setAuth({mail:'', password:''})
                             props.instantAdd(response.data.newData[0])
+                            props.setVisible(false)
     
                         },(error) => {
                             alert('Something Wrong with your Mail id')
                         })  
     
+                }
+                else{
+                    alert(response.data.message)
                 }
 
                 })

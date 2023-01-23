@@ -65,7 +65,7 @@ function SignUp(){
                 label="Password"
                 type='password'
             />
-            <Button variant='contained' onClick={handleClick}>Login</Button>
+            <Button variant='contained' onClick={handleClick}>Sign Up</Button>
             <Link to='/'>back to login</Link>
         </div>
     )
